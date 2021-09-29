@@ -9,13 +9,13 @@
     $id_data = mysqli_fetch_array($exist_id_result);
 
     if(isset($_POST['update'])){
-        $user_name = $_POST['user_name'];
+        $user_name = get($connection, $_POST['user_name']);
         $_SESSION['name'] = $user_name;
-        $user_email = $_POST['user_email'];
+        $user_email = get($connection, $_POST['user_email']);
         $_SESSION['email'] = $user_email;
-        $user_date_of_birth = $_POST['user_date_of_birth'];
+        $user_date_of_birth = get($connection, $_POST['user_date_of_birth']);
         $_SESSION['dob'] = $user_date_of_birth;
-        $user_mobile_number = $_POST['user_mobile_number'];
+        $user_mobile_number = get($connection, $_POST['user_mobile_number']);
         $_SESSION['mobile'] = $user_mobile_number;
         $user_image = $_FILES['user_image'];
         $_SESSION['image'] = $user_image;
@@ -51,7 +51,7 @@
   <div class="box">
             <form class="form-1" method="post" enctype="multipart/form-data">
                 <h1>Update Your Data</h1>
-                <label for="username">User Name</label>
+                <label for="username">Full Name</label>
                     <input type="text" name="user_name" required="" value="<?php echo $id_data['user_name']; ?>"/>
 
                 <label for="email">Email</label>

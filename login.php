@@ -4,8 +4,8 @@
 
     if(isset($_POST['login']))
     {
-        $user_email = mysqli_real_escape_string($connection, $_POST['user_email']);
-        $user_password = mysqli_real_escape_string($connection, $_POST['user_password']);
+        $user_email = get($connection, $_POST['user_email']);
+        $user_password = get($connection, $_POST['user_password']);
 
         $exist_email_query = "SELECT * FROM `user_list` WHERE `user_email`= '$user_email'";
         $exist_email_result = mysqli_query($connection, $exist_email_query);

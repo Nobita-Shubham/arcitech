@@ -1,4 +1,5 @@
 <?php
+include('components/functions.inc.php');
     session_start();
 ?>
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">

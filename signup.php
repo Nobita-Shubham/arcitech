@@ -4,14 +4,14 @@
 
     if(isset($_POST['signup']))
     {
-        $user_name = mysqli_real_escape_string($connection, $_POST['user_name']);
-        $user_email = mysqli_real_escape_string($connection, $_POST['user_email']);
-        $user_date_of_birth = mysqli_real_escape_string($connection, $_POST['user_date_of_birth']);
-        $user_mobile_number = mysqli_real_escape_string($connection, $_POST['user_mobile_number']);
-        $user_name = mysqli_real_escape_string($connection, $_POST['user_name']);
-        $user_password = mysqli_real_escape_string($connection, $_POST['password']);
+        $user_name = get($connection, $_POST['user_name']);
+        $user_email = get($connection, $_POST['user_email']);
+        $user_date_of_birth = get($connection, $_POST['user_date_of_birth']);
+        $user_mobile_number = get($connection, $_POST['user_mobile_number']);
+        $user_name = get($connection, $_POST['user_name']);
+        $user_password = get($connection, $_POST['password']);
         $hash_user_password =password_hash($user_password, PASSWORD_BCRYPT);
-        $user_confirm_password = mysqli_real_escape_string($connection, $_POST['confirm_password']);
+        $user_confirm_password = get($connection, $_POST['confirm_password']);
         $hash_user_confirm_password = password_hash($user_confirm_password, PASSWORD_BCRYPT);
 
         $user_image = $_FILES['user_image'];
@@ -73,7 +73,7 @@
   <div class="box">
             <form class="form-1" method="post" enctype="multipart/form-data">
                 <h1>SignUp</h1>
-                <label for="username">User Name</label>
+                <label for="username">Full Name</label>
                     <input type="text" name="user_name" required="" />
 
                 <label for="email">Email</label>
