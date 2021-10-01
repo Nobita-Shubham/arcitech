@@ -46,7 +46,7 @@ include('components/navbar.inc.php');
                             <td>$fetch_data[user_mobile_number]</td>
                             <td><img src ='$fetch_data[user_image]' height = '200' width='180' /></td>
                             <td>
-                            <a href='delete.php?id=$fetch_data[user_id]' class='btn btn-success'>delete</a>
+                            <a href='delete.php?id=$fetch_data[user_id]' class='btn btn-danger'>Delete</a>
                             </td>
                          </tr>";
                          $i++;

@@ -9,7 +9,7 @@
     $exist_email_query = "SELECT * FROM `user_list` WHERE `user_email`= '$user_email'";
     $exist_email_result = mysqli_query($connection, $exist_email_query);
     // $exist_email_rows = mysqli_num_rows($exist_email_result);
-    $email_password = mysqli_fetch_array($exist_email_result);
+    $email_password = fetch($exist_email_result);
         
 ?>
 <!doctype html>

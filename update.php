@@ -6,7 +6,7 @@
     $id = $_GET['id'];
     $exist_id_query = "SELECT * FROM `user_list` WHERE `user_id` = $id";
     $exist_id_result = mysqli_query($connection, $exist_id_query);
-    $id_data = mysqli_fetch_array($exist_id_result);
+    $id_data = fetch($exist_id_result);
 
     if(isset($_POST['update'])){
         $user_name = get($connection, $_POST['user_name']);

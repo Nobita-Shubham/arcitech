@@ -13,7 +13,7 @@
 
         if($exist_email_rows)
         {
-            $email_password = mysqli_fetch_array($exist_email_result);
+            $email_password = fetch($exist_email_result);
             $database_password = $email_password['user_password'];
             $_SESSION['name'] = $email_password['user_name'];
             $_SESSION['image'] = $email_password['user_image'];
